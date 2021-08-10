@@ -2,8 +2,13 @@ const express = require("express")
 const app = express()
 const categoriesController = require("./categories/CategoriesController")
 const articlesController = require("./articles/ArticlesController")
-
 const connection = require("./database/database")
+
+const Category = require("./categories/Category")
+const Article = require("./articles/Article")
+
+
+
 
 // View engine
 
