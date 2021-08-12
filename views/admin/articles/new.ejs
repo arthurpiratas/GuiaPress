@@ -10,7 +10,7 @@
             <h2>Novo Artigos</h2>
         </div>
         <div class="card-body">
-            <form method="POST" action="/categories/save">
+            <form method="POST" action="/article/save">
                 <input  class="form-control" type="text" name="title" placeholder="Defina o título do artigo"><br>
                 <textarea id="article" class="form-control" placeholder="Escreva o artigo aqui!" name="body"></textarea><br>
                 <label>Categoria</label>
@@ -19,7 +19,7 @@
                         <option value="<%= category.id%>">  <%= category.title %> </option>
                     <% })%>
                 </select><br>
-                <button class="btn btn-success">Cadastrar</button>
+                <button class="btn btn-success">Publicar</button>
             </form>
         </div>
     </div>
