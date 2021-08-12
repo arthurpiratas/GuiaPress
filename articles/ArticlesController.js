@@ -8,7 +8,12 @@ var data = new Date() // Capture a data universal
 var dataBrasilia = new Date(data.valueOf() - data.getTimezoneOffset() * 60000)
 
 router.get("/admin/articles", (req, res) => {
-    res.send("Rota de Artigos")
+    Article.findAll({
+        include: [{model: Category}]
+    }).then((articles) => {
+        res.render("admin/articles/index", {articles: articles})
+    })
+    
 })
 
 router.get('/admin/articles/new', (req, res) => {
