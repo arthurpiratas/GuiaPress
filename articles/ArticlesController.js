@@ -40,4 +40,20 @@ router.post("/article/save", (req, res) => {
     })
 })
 
+router.post('/article/delete', (req, res) => {
+    let id = req.body.id
+    
+    if(id != undefined){
+        if(!isNaN(id)){
+            Article.destroy({where: {id:id}}).then(() => {
+                res.redirect("/admin/articles")
+            })
+        }else{
+            res.redirect("/admin/articles")
+        }
+    }else{
+        res.redirect("/admin/articles")
+    }
+})
+
 module.exports = router
